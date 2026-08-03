@@ -265,9 +265,10 @@
                 if (target) {
                     e.preventDefault();
                     const heading = target.querySelector('.section-heading') || target.querySelector('.contact-card') || target;
-                    const top = heading.getBoundingClientRect().top + window.scrollY;
+                    const relTop = heading.offsetTop - target.offsetTop;
+                    const sectionTop = target.getBoundingClientRect().top + window.scrollY;
                     const navHeight = document.querySelector('.navbar').offsetHeight;
-                    window.scrollTo({ top: Math.max(0, top - navHeight - 24), behavior: 'smooth' });
+                    window.scrollTo({ top: Math.max(0, sectionTop + relTop - navHeight - 24), behavior: 'smooth' });
                 }
             });
         });
