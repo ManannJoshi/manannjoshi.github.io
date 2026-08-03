@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0D1117">
     <title>Manan Joshi | Portfolio — Student Developer & Projects</title>
-    <meta name="description" content="Student developer from India building projects with Python and Web Development.">
+    <meta name="description" content="Student developer from India building projects with Python, C++, and Web Development.">
     <meta property="og:site_name" content="Manan Joshi Portfolio">
     <meta property="og:title" content="Manan Joshi | Portfolio — Student Developer">
     <meta property="og:description" content="Student developer documenting projects, learning, and software development.">
@@ -13,6 +14,9 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <link class="favicon" rel="icon" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <meta name="google-site-verification" content="tQXLFUhHLoD3-BiDWoEAZrjiJuhq7GMiHHihAaQNMvo" />
 </head>
@@ -24,9 +28,10 @@
             <div class="nav-links">
                 <a href="#">Home</a>
                 <a href="#projects">Projects</a>
-                <a href="#learning">Learning</a>
+                <a href="#skills">Skills</a>
+                <a href="#journey">Journey</a>
                 <a href="#about">About</a>
-                <a href="https://github.com/ManannJoshi" target="_blank" class="nav-btn">GitHub ↗</a>
+                <a href="#contact" class="nav-btn">Contact</a>
             </div>
         </div>
     </nav>
@@ -34,121 +39,203 @@
     <div class="container">
 
         <header class="hero">
+            <img src="img/avatar.png" alt="Manan Joshi" class="hero-avatar">
+            <p class="hero-tag">Student Developer</p>
             <h1>Hi, I'm <span>Manan Joshi.</span></h1>
             <p class="hero-text">
-                Student developer from India passionate about building software,
-                learning new technologies, and turning ideas into real projects.
+                I build software with Python, C++, and the web — one project at a time.
+                I'm a student developer from India who loves turning ideas into working things.
             </p>
             <div class="hero-buttons">
-                <a href="#projects" class="btn">Explore Projects</a>
-                <a href="https://github.com/ManannJoshi" target="_blank" class="btn secondary">GitHub ↗</a>
-            </div>
-
-            <div class="hero-stats">
-                <div class="stat">
-                    <img src="img/python.svg" alt="Python">
-                    <p>Python</p>
-                </div>
-                <div class="stat">
-                    <img src="img/html5.svg" alt="HTML">
-                    <p>HTML</p>
-                </div>
-                <div class="stat">
-                    <img src="img/css.svg" alt="CSS">
-                    <p>CSS</p>
-                </div>
-                <div class="stat">
-                    <img src="img/javascript.svg" alt="JS">
-                    <p>JavaScript</p>
-                </div>
+                <a href="#projects" class="btn">See My Work</a>
+                <a href="#contact" class="btn secondary">Get In Touch</a>
             </div>
         </header>
 
         <section class="featured" id="projects">
-            <div class="section-heading">
-                <p class="section-tag">FEATURED WORK</p>
+            <div class="section-heading reveal">
+                <p class="section-tag">Featured Work</p>
                 <h2>Things I've built while learning.</h2>
                 <p>
-                    Every project has taught me something new—from writing my first HTML pages to
-                    building Python applications and automation tools.
+                    Every project has taught me something new — from Python automation to C++ tools
+                    and browser games. Each one has a live demo or source on GitHub.
                 </p>
             </div>
 
             <div class="project-grid">
-            
-                <a href="trex/index.html" class="project project-with-bg">
+
+                <div class="project project-with-bg reveal">
                     <div class="project-preview">
-                        <img src="img/trexPreview.png" alt="T-Rex Runner Preview">
+                        <img src="img/trexPreview.png" alt="T-Rex Runner Preview" loading="lazy">
                     </div>
                     <h3>T-Rex Runner</h3>
-                    <p>My own version of the Chrome dinosaur game built with p5.js...</p>
-                    <span class="view-project">View Project →</span>
-                </a>
+                    <p>My own version of the Chrome dinosaur game built with p5.js — jump obstacles and survive as long as you can.</p>
+                    <div class="project-meta">
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">p5.js</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="trex/index.html" class="project-link">Play Game</a>
+                        <a href="https://github.com/ManannJoshi/trex" target="_blank" rel="noopener" class="project-link secondary-link">Source</a>
+                    </div>
+                </div>
 
-                 <a href="https://github.com/manannjoshi/Password-Generator" target="_blank" class="project project-with-bg">
+                <div class="project project-with-bg reveal">
                     <div class="project-preview">
-                        <img src="img/passwordPreview.png" alt="Password-Generator Preview">
+                        <img src="img/minecraftToolsPreview.svg" alt="Minecraft Tools Preview" class="svg-preview" loading="lazy">
+                    </div>
+                    <h3>Minecraft Tools</h3>
+                    <p>A C++ CLI tool with a block calculator and railway calculator — built for Minecraft builders, with cross-platform releases.</p>
+                    <div class="project-meta">
+                        <span class="tag">C++</span>
+                        <span class="tag">CMake</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/manannjoshi/minecraft-tools" target="_blank" rel="noopener" class="project-link">View Source</a>
+                    </div>
+                </div>
+
+                <div class="project project-with-bg reveal">
+                    <div class="project-preview">
+                        <img src="img/passwordPreview.png" alt="Password-Generator Preview" loading="lazy">
                     </div>
                     <h3>Password Generator</h3>
-                    <p>Password generator made in python with features like password size, include or exclude certain characters made in python using secret library.</p>
-                    <span class="view-project">View Project →</span>
-                </a>
+                    <p>Generate strong, secure passwords with Python's secrets library — pick length and choose which character sets to include.</p>
+                    <div class="project-meta">
+                        <span class="tag">Python</span>
+                        <span class="tag">secrets</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/manannjoshi/Password-Generator" target="_blank" rel="noopener" class="project-link">View Source</a>
+                    </div>
+                </div>
 
-                <a href="https://github.com/manannjoshi/Simple-Calculator" target="_blank" class="project project-with-bg">
+                <div class="project project-with-bg reveal">
                     <div class="project-preview">
-                        <img src="img/calculatorPreview.png" alt="Calculator Preview">
+                        <img src="img/calculatorPreview.svg" alt="Calculator Preview" class="svg-preview" loading="lazy">
                     </div>
                     <h3>Simple Calculator</h3>
-                    <p>A simple arithmatic calculator for simple calculations like addition, subtraction, multiplication and division.</p>
-                    <span class="view-project">View Project →</span>
-                </a>
+                    <p>A clean command-line calculator for addition, subtraction, multiplication, and division.</p>
+                    <div class="project-meta">
+                        <span class="tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/manannjoshi/Simple-Calculator" target="_blank" rel="noopener" class="project-link">View Source</a>
+                    </div>
+                </div>
 
             </div>
         </section>
 
-        <section class="learning" id="learning">
-            <div class="section-heading">
-                <p class="section-tag">CURRENTLY LEARNING</p>
-                <h2>Growing one skill at a time.</h2>
-                <p>I'm constantly learning new technologies and improving my programming skills through hands-on projects.</p>
+        <section class="skills" id="skills">
+            <div class="section-heading reveal">
+                <p class="section-tag">Skills</p>
+                <h2>Languages &amp; tools I work with.</h2>
+                <p>Hands-on experience from building real projects — not just tutorials.</p>
             </div>
 
             <div class="skills-grid">
-                <div class="skill-card">
-                    <h3><img src="img/javascript.svg" alt="JavaScript" class="skill-icon">JS</h3>
-                    <p>Revisiting JavaScript after a long break from it.</p>
+                <div class="skill-card reveal">
+                    <img src="img/python.svg" alt="Python" class="skill-icon">
+                    <h3>Python</h3>
+                    <p>Comfortable with core programming, file handling, and building CLI tools.</p>
                 </div>
-                <div class="skill-card">
-                    <h3><img src="img/css.svg" alt="css" class="skill-icon">CSS</h3>
-                    <p>Learning CSS to make even better websites.</p>
+                <div class="skill-card reveal">
+                    <img src="img/cplusplus.svg" alt="C++" class="skill-icon">
+                    <h3>C++</h3>
+                    <p>Building console applications, strong typing, and structured programs.</p>
                 </div>
-                <div class="skill-card">
-                    <h3><img src="img/cplusplus.svg" alt="c++" class="skill-icon">C++</h3>
-                    <p>Starting C++ as soon as I am done with CSS and JS</p>
+                <div class="skill-card reveal">
+                    <img src="img/html5.svg" alt="HTML" class="skill-icon">
+                    <h3>HTML</h3>
+                    <p>Solid grasp of semantic markup for clean, structured web pages.</p>
+                </div>
+                <div class="skill-card reveal">
+                    <img src="img/css.svg" alt="CSS" class="skill-icon">
+                    <h3>CSS</h3>
+                    <p>Styling responsive layouts — like this very portfolio.</p>
+                </div>
+                <div class="skill-card reveal">
+                    <img src="img/javascript.svg" alt="JavaScript" class="skill-icon">
+                    <h3>JavaScript</h3>
+                    <p>Relearning the fundamentals with a project-driven approach.</p>
+                </div>
+                <div class="skill-card skill-card-accent reveal">
+                    <h3>Currently Learning</h3>
+                    <p>Advanced JavaScript, responsive CSS, and browser game development.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="journey" id="journey">
+            <div class="section-heading reveal">
+                <p class="section-tag">My Journey</p>
+                <h2>How I got here.</h2>
+                <p>A quick timeline of my coding journey so far.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card reveal">
+                        <p class="timeline-tag">The Beginning</p>
+                        <h3>First taste of code</h3>
+                        <p>Learned JavaScript basics around age 11–12 through WhiteHat Jr and built several simple JS games. Never stopped coding since.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card reveal">
+                        <p class="timeline-tag">Class 12</p>
+                        <h3>Computer Science</h3>
+                        <p>Studied Python, file handling, SQL and databases, stacks, and computer networks (HTTP, TCP/IP).</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card reveal">
+                        <p class="timeline-tag">Now</p>
+                        <h3>Building for real</h3>
+                        <p>Shipping Python and C++ projects with automated releases, and building this site as I learn web development.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-card reveal">
+                        <p class="timeline-tag">Next Up</p>
+                        <h3>Where I'm headed</h3>
+                        <p>Advanced CSS and JavaScript, browser games that run anywhere, and full-stack development.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="about" id="about">
-            <div class="section-heading">
-                <p class="section-tag">ABOUT ME</p>
+            <div class="section-heading reveal">
+                <p class="section-tag">About Me</p>
                 <h2>Curious, always learning, and always building.</h2>
             </div>
             <p>Hey! I'm Manan, a student developer from India who enjoys building software and learning new technologies.</p>
             <p>This portfolio documents my journey as I explore programming, improve my skills, and create projects that challenge me to learn something new every time.</p>
             <p>Outside of coding, I enjoy gaming, exploring technology, and finding new ideas for future projects.</p>
-            <a href="milestonesAndGoals.html" class="btn">Read My Journey →</a>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="contact-card reveal">
+                <p class="section-tag">Get In Touch</p>
+                <h2>Let's build something together.</h2>
+                <p>I'm always open to new projects, ideas, and opportunities. Say hello!</p>
+                <div class="hero-buttons">
+                    <a href="mailto:mananjoshi.dev@gmail.com" class="btn">Email Me</a>
+                    <a href="https://github.com/ManannJoshi" target="_blank" rel="noopener" class="btn secondary">GitHub ↗</a>
+                </div>
+            </div>
         </section>
 
         <footer>
-            <div class="footer-content">
-                <p class="footer-tag">THANKS FOR VISITING</p>
-                <h2>Thanks for checking out my portfolio.</h2>
-                <p>I'm always learning, building new projects, and improving my skills. Feel free to explore my work or check out my GitHub for future updates.</p>
-                <a href="https://github.com/ManannJoshi" target="_blank" class="btn">Visit My GitHub →</a>
-            </div>
             <div class="footer-bottom">
                 <p>© 2026 Manan Joshi. Built with HTML &amp; CSS.</p>
+                <a href="#" class="back-to-top">Back to top ↑</a>
             </div>
         </footer>
 
@@ -170,6 +257,49 @@
                 }
             });
         });
+
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sections = ['projects', 'skills', 'journey', 'about', 'contact'];
+
+        function updateActiveNav() {
+            const pos = window.scrollY + 100;
+            let current = '';
+            for (const id of sections) {
+                const el = document.getElementById(id);
+                if (el && el.offsetTop <= pos) current = id;
+            }
+            navLinks.forEach(function (a) {
+                const href = a.getAttribute('href');
+                const isActive = current ? href === '#' + current : href === '#';
+                a.classList.toggle('active', isActive);
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNav);
+        updateActiveNav();
+
+        const revealEls = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            revealEls.forEach(function (el, i) {
+                const parent = el.parentElement;
+                if (parent && parent.classList.contains('project-grid')) {
+                    el.style.transitionDelay = (i % 4) * 0.08 + 's';
+                } else if (parent && parent.classList.contains('skills-grid')) {
+                    el.style.transitionDelay = (i % 3) * 0.08 + 's';
+                }
+                observer.observe(el);
+            });
+        } else {
+            revealEls.forEach(function (el) { el.classList.add('visible'); });
+        }
     </script>
 
 </body>
