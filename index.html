@@ -265,7 +265,9 @@
                 if (target) {
                     e.preventDefault();
                     const heading = target.querySelector('.section-heading') || target.querySelector('.contact-card') || target;
-                    heading.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    const top = heading.getBoundingClientRect().top + window.scrollY;
+                    const navHeight = document.querySelector('.navbar').offsetHeight;
+                    window.scrollTo({ top: Math.max(0, top - navHeight - 24), behavior: 'smooth' });
                 }
             });
         });
