@@ -8,9 +8,11 @@
     <title>Manan Joshi | Portfolio — Student Developer & Projects</title>
     <meta name="description" content="Student developer from India building projects with Python, C++, and Web Development.">
     <meta property="og:site_name" content="Manan Joshi Portfolio">
+    <meta property="og:url" content="https://manan.is-a.dev/">
+    <link rel="canonical" href="https://manan.is-a.dev/">
     <meta property="og:title" content="Manan Joshi | Portfolio — Student Developer">
     <meta property="og:description" content="Student developer documenting projects, learning, and software development.">
-    <meta property="og:image" content="https://manan.is-a.dev/preview.png">
+    <meta property="og:image" content="https://manan.is-a.dev/preview.png?v=2">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <link class="favicon" rel="icon" href="favicon.png">
@@ -43,8 +45,8 @@
             <p class="hero-tag">Student Developer</p>
             <h1>Hi, I'm <span>Manan Joshi.</span></h1>
             <p class="hero-text">
-                I build software with Python, C++, and the web — one project at a time.
-                I'm a student developer from India who loves turning ideas into working things.
+                I turn ideas into working software with Python, C++, and the web —
+                one project at a time. Based in India.
             </p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn">See My Work</a>
@@ -117,7 +119,7 @@
 
         <section class="skills" id="skills">
             <div class="section-heading reveal">
-                <p class="section-tag">Skills</p>
+                <p class="section-tag">Toolbox</p>
                 <h2>My Skills.</h2>
                 <p>Hands-on experience from building real projects — not just tutorials.</p>
             </div>
@@ -167,7 +169,7 @@
 
         <section class="journey" id="journey">
             <div class="section-heading reveal">
-                <p class="section-tag">My Journey</p>
+                <p class="section-tag">Milestones</p>
                 <h2>My Journey.</h2>
                 <p>A quick timeline of my coding journey so far.</p>
             </div>
@@ -210,17 +212,17 @@
 
         <section class="about" id="about">
             <div class="section-heading reveal">
-                <p class="section-tag">About Me</p>
+                <p class="section-tag">Who I Am</p>
                 <h2>About Me.</h2>
             </div>
-            <p>Hey! I'm Manan, a student developer from India who enjoys building software and learning new technologies.</p>
-            <p>This portfolio documents my journey as I explore programming, improve my skills, and create projects that challenge me to learn something new every time.</p>
-            <p>Outside of coding, I enjoy gaming, exploring technology, and finding new ideas for future projects.</p>
+            <p>Hey! I'm Manan, a student developer from India who enjoys building software and learning how things work.</p>
+            <p>I've been coding since I was 11, starting with JavaScript games and moving into Python, C++, and the web — always learning by building.</p>
+            <p>Outside of coding, I enjoy gaming, exploring new tech, and hunting for my next project idea.</p>
         </section>
 
         <section class="contact" id="contact">
             <div class="contact-card reveal">
-                <p class="section-tag">Get In Touch</p>
+                <p class="section-tag">Contact</p>
                 <h2>Get In Touch.</h2>
                 <p>I'm always open to new projects, ideas, and opportunities. Say hello!</p>
                 <div class="hero-buttons">
@@ -232,7 +234,7 @@
 
         <footer>
             <div class="footer-bottom">
-                <p>© 2026 Manan Joshi. Built with HTML &amp; CSS.</p>
+                <p>© <span id="year">2026</span> Manan Joshi. Built with HTML &amp; CSS.</p>
                 <a href="#" class="back-to-top">Back to top ↑</a>
             </div>
         </footer>
@@ -342,6 +344,8 @@
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && gameModal.classList.contains('open')) closeGame();
         });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 
 </body>
