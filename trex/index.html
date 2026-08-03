@@ -68,12 +68,17 @@
             Jump with <b>spacebar</b>, <b>click</b>, or <b>tap</b>.
         </p>
 
-        <a href="/index.html#projects" class="btn">
+        <a href="/" class="btn" id="back-home">
             Back to Home
         </a>
 
     </div>
 
+    <script>
+        if (window.self !== window.top) {
+            document.getElementById('back-home').style.display = 'none';
+        }
+    </script>
     <script src="sketch.js"></script>
 
 </body>

@@ -64,9 +64,9 @@
 
             <div class="project-grid">
 
-                <div class="project project-with-bg reveal">
-                    <div class="project-preview">
-                        <img src="img/trexPreview.png" alt="T-Rex Runner Preview" loading="lazy">
+                <div class="project reveal">
+                    <div class="project-icon tile-js">
+                        <img src="img/javascript.svg" alt="JavaScript icon">
                     </div>
                     <h3>T-Rex Runner</h3>
                     <p>My own version of the Chrome dinosaur game built with p5.js — jump obstacles and survive as long as you can.</p>
@@ -75,14 +75,14 @@
                         <span class="tag">p5.js</span>
                     </div>
                     <div class="project-links">
-                        <a href="trex/index.html" class="project-link">Play Game</a>
+                        <a href="#" class="project-link" data-game="trex/index.html">Play Game</a>
                         <a href="https://github.com/ManannJoshi/trex" target="_blank" rel="noopener" class="project-link secondary-link">Source</a>
                     </div>
                 </div>
 
-                <div class="project project-with-bg reveal">
-                    <div class="project-preview">
-                        <img src="img/minecraftToolsPreview.svg" alt="Minecraft Tools Preview" class="svg-preview" loading="lazy">
+                <div class="project reveal">
+                    <div class="project-icon tile-cpp">
+                        <img src="img/cplusplus.svg" alt="C++ icon">
                     </div>
                     <h3>Minecraft Tools</h3>
                     <p>A C++ CLI tool with a block calculator and railway calculator — built for Minecraft builders, with cross-platform releases.</p>
@@ -92,12 +92,13 @@
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/manannjoshi/minecraft-tools" target="_blank" rel="noopener" class="project-link">View Source</a>
+                        <a href="https://github.com/manannjoshi/minecraft-tools/releases" target="_blank" rel="noopener" class="project-link secondary-link">Releases</a>
                     </div>
                 </div>
 
-                <div class="project project-with-bg reveal">
-                    <div class="project-preview">
-                        <img src="img/passwordPreview.png" alt="Password-Generator Preview" loading="lazy">
+                <div class="project reveal">
+                    <div class="project-icon tile-python">
+                        <img src="img/python.svg" alt="Python icon">
                     </div>
                     <h3>Password Generator</h3>
                     <p>Generate strong, secure passwords with Python's secrets library — pick length and choose which character sets to include.</p>
@@ -107,20 +108,7 @@
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/manannjoshi/Password-Generator" target="_blank" rel="noopener" class="project-link">View Source</a>
-                    </div>
-                </div>
-
-                <div class="project project-with-bg reveal">
-                    <div class="project-preview">
-                        <img src="img/calculatorPreview.svg" alt="Calculator Preview" class="svg-preview" loading="lazy">
-                    </div>
-                    <h3>Simple Calculator</h3>
-                    <p>A clean command-line calculator for addition, subtraction, multiplication, and division.</p>
-                    <div class="project-meta">
-                        <span class="tag">Python</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/manannjoshi/Simple-Calculator" target="_blank" rel="noopener" class="project-link">View Source</a>
+                        <a href="https://github.com/manannjoshi/Password-Generator/releases" target="_blank" rel="noopener" class="project-link secondary-link">Releases</a>
                     </div>
                 </div>
 
@@ -136,27 +124,37 @@
 
             <div class="skills-grid">
                 <div class="skill-card reveal">
-                    <img src="img/python.svg" alt="Python" class="skill-icon">
+                    <div class="skill-icon tile-python">
+                        <img src="img/python.svg" alt="Python">
+                    </div>
                     <h3>Python</h3>
                     <p>Comfortable with core programming, file handling, and building CLI tools.</p>
                 </div>
                 <div class="skill-card reveal">
-                    <img src="img/cplusplus.svg" alt="C++" class="skill-icon">
+                    <div class="skill-icon tile-cpp">
+                        <img src="img/cplusplus.svg" alt="C++">
+                    </div>
                     <h3>C++</h3>
                     <p>Building console applications, strong typing, and structured programs.</p>
                 </div>
                 <div class="skill-card reveal">
-                    <img src="img/html5.svg" alt="HTML" class="skill-icon">
+                    <div class="skill-icon tile-html">
+                        <img src="img/html5.svg" alt="HTML">
+                    </div>
                     <h3>HTML</h3>
                     <p>Solid grasp of semantic markup for clean, structured web pages.</p>
                 </div>
                 <div class="skill-card reveal">
-                    <img src="img/css.svg" alt="CSS" class="skill-icon">
+                    <div class="skill-icon tile-css">
+                        <img src="img/css.svg" alt="CSS">
+                    </div>
                     <h3>CSS</h3>
                     <p>Styling responsive layouts — like this very portfolio.</p>
                 </div>
                 <div class="skill-card reveal">
-                    <img src="img/javascript.svg" alt="JavaScript" class="skill-icon">
+                    <div class="skill-icon tile-js">
+                        <img src="img/javascript.svg" alt="JavaScript">
+                    </div>
                     <h3>JavaScript</h3>
                     <p>Relearning the fundamentals with a project-driven approach.</p>
                 </div>
@@ -241,6 +239,17 @@
 
     </div>
 
+    <div class="game-modal" id="game-modal">
+        <div class="game-modal-backdrop" id="game-modal-backdrop"></div>
+        <div class="game-modal-content">
+            <div class="game-modal-header">
+                <span class="game-modal-title">T-Rex Runner</span>
+                <button class="game-modal-close" id="game-modal-close" aria-label="Close game">✕</button>
+            </div>
+            <iframe class="game-modal-frame" id="game-modal-frame" src="" title="T-Rex Runner game" loading="lazy"></iframe>
+        </div>
+    </div>
+
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(function (link) {
             link.addEventListener('click', function (e) {
@@ -300,6 +309,32 @@
         } else {
             revealEls.forEach(function (el) { el.classList.add('visible'); });
         }
+
+        const gameModal = document.getElementById('game-modal');
+        const gameFrame = document.getElementById('game-modal-frame');
+        const gameClose = document.getElementById('game-modal-close');
+        const gameBackdrop = document.getElementById('game-modal-backdrop');
+
+        function closeGame() {
+            gameModal.classList.remove('open');
+            gameFrame.removeAttribute('src');
+            document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('[data-game]').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                gameFrame.setAttribute('src', link.getAttribute('data-game'));
+                gameModal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        gameClose.addEventListener('click', closeGame);
+        gameBackdrop.addEventListener('click', closeGame);
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && gameModal.classList.contains('open')) closeGame();
+        });
     </script>
 
 </body>
