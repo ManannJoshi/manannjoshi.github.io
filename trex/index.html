@@ -50,6 +50,8 @@
             border-radius:20px;
             border:1px solid var(--border);
             touch-action:none;
+            max-width:100%;
+            height:auto;
         }
 
     </style>
@@ -77,6 +79,11 @@
     <script>
         if (window.self !== window.top) {
             document.getElementById('back-home').style.display = 'none';
+            window.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') {
+                    window.parent.postMessage('close-game', '*');
+                }
+            });
         }
     </script>
     <script src="sketch.js"></script>
