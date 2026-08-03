@@ -12,6 +12,9 @@ var score=0;
 
 var gameOver, restart;
 
+var jumpPressed = false;
+
+var isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
 
 function preload(){
@@ -35,6 +38,26 @@ function preload(){
 
 function setup() {
   createCanvas(600, 200);
+  
+  var canvas = document.querySelector('canvas');
+  
+  canvas.addEventListener('mousedown', function() {
+    jumpPressed = true;
+  });
+  canvas.addEventListener('mouseup', function() {
+    jumpPressed = false;
+  });
+  canvas.addEventListener('mouseleave', function() {
+    jumpPressed = false;
+  });
+  canvas.addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    jumpPressed = true;
+  }, { passive: false });
+  canvas.addEventListener('touchend', function(e) {
+    e.preventDefault();
+    jumpPressed = false;
+  }, { passive: false });
   
   trex = createSprite(50,180,20,50);
   
@@ -77,7 +100,7 @@ function draw() {
     score = score + Math.round(getFrameRate()/60);
     ground.velocityX = -(6 + 3*score/100);
   
-    if(keyDown("space") && trex.y >= 159) {
+    if((keyDown("space") || jumpPressed) && trex.y >= 159) {
       trex.velocityY = -12;
     }
   
@@ -112,11 +135,18 @@ function draw() {
     obstaclesGroup.setLifetimeEach(-1);
     cloudsGroup.setLifetimeEach(-1);
     
-    if(mousePressedOver(restart)) {
+    if(mousePressedOver(restart) || jumpPressed) {
+      jumpPressed = false;
       reset();
     }
   }
   
+  
+  if(isTouchDevice && gameState === PLAY && score < 1) {
+    textAlign(CENTER, CENTER);
+    text("Tap to Jump", 300, 150);
+    textAlign(LEFT, BASELINE);
+  }
   
   drawSprites();
 }
@@ -186,7 +216,8 @@ function reset(){
   trex.changeAnimation("running",trex_running);
   
  
-  
+
   score = 0;
   
 }
+

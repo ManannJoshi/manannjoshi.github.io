@@ -647,16 +647,29 @@ footer{
 
 @media (max-width: 768px) {
     .nav-container {
-        flex-direction: column;
+        flex-direction: row;
         height: auto;
-        padding: 15px 0;
-        gap: 15px;
+        padding: 14px 0;
+        gap: 0;
     }
 
     .nav-links {
-        gap: 20px;
-        flex-wrap: wrap;
+        gap: 14px;
+        flex-wrap: nowrap;
         justify-content: center;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-links a {
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+
+    .nav-links .nav-btn {
+        padding: 6px 14px;
+        font-size: 0.8rem;
     }
 
     .hero {
